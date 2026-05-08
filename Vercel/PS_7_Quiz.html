@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+
+  <style>
+    body{
+      font-family:Arial;
+      background:#f2f2f2;
+      text-align:center;
+      padding:40px;
+    }
+
+    .box{
+      background:white;
+      width:500px;
+      margin:auto;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 0 10px gray;
+      text-align:left;
+    }
+
+    h1{
+      text-align:center;
+    }
+
+    button{
+      padding:10px 20px;
+      margin-top:20px;
+      background:green;
+      color:white;
+      border:none;
+      cursor:pointer;
+      border-radius:5px;
+      font-size:16px;
+    }
+
+    h2{
+      text-align:center;
+      color:blue;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Online Quiz</h1>
+
+<!-- Question 1 -->
+<h3>1. HTML stands for?</h3>
+
+<input type="radio" name="q1" value="0"> Hyper Tool Markup Language<br>
+<input type="radio" name="q1" value="1"> Hyper Text Markup Language<br>
+<input type="radio" name="q1" value="0"> Home Text Language<br>
+
+<!-- Question 2 -->
+<h3>2. CSS is used for?</h3>
+
+<input type="radio" name="q2" value="1"> Styling Web Pages<br>
+<input type="radio" name="q2" value="0"> Database Management<br>
+<input type="radio" name="q2" value="0"> Server Configuration<br>
+
+<!-- Question 3 -->
+<h3>3. JavaScript is used for?</h3>
+
+<input type="radio" name="q3" value="0"> Cooking<br>
+<input type="radio" name="q3" value="1"> Web Interactivity<br>
+<input type="radio" name="q3" value="0"> Operating System<br>
+
+<!-- Question 4 -->
+<h3>4. Which tag is used for inserting image in HTML?</h3>
+
+<input type="radio" name="q4" value="0"> &lt;image&gt;<br>
+<input type="radio" name="q4" value="1"> &lt;img&gt;<br>
+<input type="radio" name="q4" value="0"> &lt;pic&gt;<br>
+
+<!-- Question 5 -->
+<h3>5. Which company developed Java?</h3>
+
+<input type="radio" name="q5" value="1"> Sun Microsystems<br>
+<input type="radio" name="q5" value="0"> Microsoft<br>
+<input type="radio" name="q5" value="0"> Google<br>
+
+<button onclick="checkAnswer()">Submit</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+
+function checkAnswer(){
+
+  let score = 0;
+
+  // Total Questions
+  let totalQuestions = 5;
+
+  // Loop through all questions
+  for(let q=1; q<=totalQuestions; q++){
+
+    let answers = document.getElementsByName("q"+q);
+
+    for(let i=0; i<answers.length; i++){
+
+      if(answers[i].checked){
+        score += parseInt(answers[i].value);
+      }
+    }
+  }
+
+  document.getElementById("result").innerHTML =
+  "Your Score: " + score + "/" + totalQuestions;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+  <style>
+    body{
+      font-family:Arial;
+      text-align:center;
+      background:#dff6ff;
+      padding:40px;
+    }
+    .box{
+      background:white;
+      width:300px;
+      margin:auto;
+      padding:20px;
+      border-radius:10px;
+    }
+    input{
+      padding:10px;
+      width:80%;
+    }
+    button{
+      padding:10px;
+      margin-top:10px;
+      background:blue;
+      color:white;
+      border:none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1>Weather App</h1>
+
+  <input type="text" id="city" placeholder="Enter City">
+
+  <button onclick="getWeather()">Check Weather</button>
+
+  <h2 id="weather"></h2>
+</div>
+
+<script>
+function getWeather(){
+
+  let city=document.getElementById("city").value;
+
+  let temp=Math.floor(Math.random()*15)+20;
+
+  let conditions=["Sunny","Cloudy","Rainy","Windy"];
+
+  let randomCondition=
+  conditions[Math.floor(Math.random()*conditions.length)];
+
+  document.getElementById("weather").innerHTML=
+  city + "<br>" +
+  temp + "°C<br>" +
+  randomCondition;
+}
+</script>
+
+</body>
+</html>

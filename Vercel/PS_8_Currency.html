@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      background:#f2f2f2;
+      text-align:center;
+      padding:40px;
+    }
+
+    .box{
+      background:white;
+      padding:25px;
+      width:350px;
+      margin:auto;
+      border-radius:10px;
+      box-shadow:0 0 10px gray;
+    }
+
+    input, select{
+      width:90%;
+      padding:10px;
+      margin:10px;
+      font-size:16px;
+    }
+
+    button{
+      padding:10px 20px;
+      background:blue;
+      color:white;
+      border:none;
+      cursor:pointer;
+      font-size:16px;
+      border-radius:5px;
+    }
+
+    h2{
+      color:green;
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>Currency Converter</h1>
+
+  <input type="number" id="amount" placeholder="Enter Amount">
+
+  <select id="from">
+    <option value="83">INR</option>
+    <option value="1">USD</option>
+    <option value="0.92">EUR</option>
+    <option value="0.79">GBP</option>
+  </select>
+
+  <select id="to">
+    <option value="1">USD</option>
+    <option value="83">INR</option>
+    <option value="0.92">EUR</option>
+    <option value="0.79">GBP</option>
+  </select>
+
+  <button onclick="convertCurrency()">Convert</button>
+
+  <h2 id="result"></h2>
+
+</div>
+
+<script>
+
+function convertCurrency(){
+
+  let amount = parseFloat(document.getElementById("amount").value);
+
+  let from = parseFloat(document.getElementById("from").value);
+
+  let to = parseFloat(document.getElementById("to").value);
+
+  // Convert currency
+  let usdAmount = amount / from;
+
+  let converted = usdAmount * to;
+
+  document.getElementById("result").innerHTML =
+    "Converted Amount = " + converted.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

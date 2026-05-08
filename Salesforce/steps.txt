@@ -1,0 +1,49 @@
+Click setup
+Open:
+Object Manager
+Click:
+Create → Custom Object
+Enter:
+Label: Book
+Plural Label: Books
+Save.
+Add Fields in Book Object
+Open:
+Fields & Relationships → New
+Create fields:
+Author Name (Text)
+Price (Currency)
+Quantity (Number)
+Save fields.
+
+Create Student Object
+Create another Custom Object:
+Student
+Add fields:
+Roll Number
+Department
+Email
+
+Create Tabs
+Search:
+Tabs
+Create tabs for:
+Book
+Student
+
+Add Tabs to App
+Open:
+App Manager → Edit App
+Add all tabs.
+
+⚙️ Gear Icon → Setup
+Search:
+App Manager
+Click:
+New Lightning App
+Enter App Name:
+Library Management System
+Add all tabs.
+Finish app creation.
+
+Launch using App manager
